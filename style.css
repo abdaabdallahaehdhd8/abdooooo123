@@ -1,0 +1,593 @@
+:root {
+    --background: #0f0e17;
+    --headline: #fffffe;
+    --paragraph: #a7a9be;
+    --button: #ff8906;
+    --button-text: #fffffe;
+    --illustration-stroke: black;
+    --main: #fffffe;
+    --highlight: #ff8906;
+    --secondary: #f25f4c;
+    --tertiary: #e53170;
+  }
+/* تعيين خطوط أساسية وتحسين المظهر */
+body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: #0f0e17; /* جعل خلفية الموقع بنفس لون النافبار */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    color: white;
+    padding-bottom: 80px; /* مساحة لمنع التداخل مع الفوتر */
+}
+
+/* تصميم شريط التنقل */
+.navbar {
+    background-color: #0f0e17;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* زر اللوجو في المنتصف */
+.navbar .container button {
+    background: none;
+    border: none;
+    color: #ff8906;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* تكبير الأيقونات */
+.navbar .container i {
+    font-size: 24px;
+}
+
+/* محتوى الصفحة */
+.content {
+    padding: 20px;
+    max-width: 90%;
+    margin: auto;
+    color: #000
+}
+
+/* تصميم نافذة الإشعارات */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 50vw;
+    height: 50vh;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: Illustration Stroke;
+    color: #000
+}
+
+/* زر إغلاق الإشعار */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: red;
+    font-weight: bold;
+    
+}
+
+/* تحسين النصوص داخل الإشعار */
+.modal-content h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #000
+}
+
+.modal-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 80%;
+    color: #000
+}
+
+/* جعل التصميم متجاوبًا مع الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .navbar .container {
+        flex-direction: column;
+    }
+
+    .navbar .container button {
+        font-size: 18px;
+        margin: 5px 0;
+    }
+
+    .modal-content {
+        width: 80vw;
+        height: 60vh;
+    }
+}
+
+/* تحسين السلايدر */
+#hero-carousel {
+    margin-top: 10px;
+    overflow: hidden; /* منع أي تجاوزات خارج الإطار */
+}
+
+.carousel-item img {
+    height: 60vh;
+    object-fit: cover;
+    border-radius: 10px;
+    width: 100%;
+    display: block;
+}
+
+/* إزالة أي تأثيرات زائدة أو خلفيات غير مرغوبة */
+.carousel-caption {
+    background: none !important; /* إزالة الخلفية */
+    padding: 0 !important; /* إزالة التباعد */
+    bottom: 0 !important; /* ضبط المكان */
+    width: auto !important;
+    height: auto !important;
+    display: none; /* إخفاء الكابشن إذا لم يكن ضرورياً */
+}
+
+/* تحسين أزرار التنقل */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 10px;
+}
+
+/* في حال كان هناك عنصر إضافي يسبب المشكلة */
+.carousel-item::after {
+    content: "";
+    display: none;
+}
+
+
+/* شريط الإشعارات المتحرك */
+.notification-bar {
+    background-color: white; /* لون الشريط */
+    color: #060476;
+    font-size: 18px;
+    padding: 15px;
+    margin-top: 20px; /* مسافة بسيطة بعد السلايدر */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+}
+
+.notification-content i {
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+/* إضافة مسافة بين الشريط المتحرك والسكشن الجديد */
+.section-spacing {
+    margin-top: 20px;
+}
+/* تنسيق قسم الخدمات */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* شبكة مرنة */
+    gap: 20px; /* المسافة بين العناصر */
+    padding: 40px 20px; /* تباعد داخلي */
+    text-align: center;
+    background-color: #0f0e17; /* نفس لون الـ navbar */
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 90%;
+    box-shadow: 3px 6px 10px  5px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* تنسيق كل عنصر */
+.service-item {
+    background: linear-gradient(135deg, #1e1e2f, #3a3a4f);
+    padding: 20px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-item:hover {
+    transform: translateY(-5px); /* تأثير الارتفاع عند التحويم */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* تنسيق الأيقونات */
+.service-item i {
+    font-size: 40px; /* تكبير الأيقونة */
+    color: #f39c12;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.service-item:hover i {
+    color: #f25f4c; /* تغيير اللون عند التحويم */
+}
+
+/* تنسيق النص */
+.service-item p {
+    font-size: 16px;
+    font-weight: bold;
+    color: white; /* لون متناسق */
+    margin: 0;
+}
+
+/* إزالة الخطوط من النصوص */
+.service-item a {
+    text-decoration: none; /* إزالة الخط السفلي */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: inherit; /* يحافظ على لون النص */
+}
+
+/* تحسين التناسق على الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .services {
+        grid-template-columns: repeat(3, 1fr); /* 3 أعمدة على الشاشات الصغيرة */
+    }
+
+    .service-item img {
+        max-width: 100px; /* تكبير الصور في الشاشات الصغيرة */
+    }
+}
+
+@media (max-width: 480px) {
+    .services {
+        grid-template-columns: repeat(2, 1fr); /* 2 عمود فقط على الشاشات الأصغر */
+    }
+
+    .service-item img {
+        max-width: 120px; /* تكبير الصور أكثر لجعلها واضحة */
+    }
+}
+
+.profits-section {
+    padding: 40px 0;
+    background: #0f0e17;
+    text-align: center;
+    color: white;
+}
+
+.profits-section .container {
+    width: 80%;
+    margin: auto;
+}
+
+.profits-section .title {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.profit-list {
+    list-style: none;
+    padding: 0;
+}
+
+.profit-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 10px;
+    border: 2px solid white;
+}
+
+.profit-amount {
+    font-weight: bold;
+    color: #00ff99;
+}
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to right, #2a52be, #1e3c72);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.nav-item {
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    flex: 1;
+}
+
+.nav-item i {
+    font-size: 22px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.nav-item:hover {
+    color: #ffcc00;
+}
+
+/* تصميم متجاوب */
+@media (max-width: 600px) {
+    .nav-item {
+        font-size: 14px;
+    }
+
+    .nav-item i {
+        font-size: 18px;
+    }
+}
+.fixed-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #1e3a8a;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.fixed-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fixed-nav i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+/* إضافة مساحة أسفل الصفحة لمنع التداخل مع الـ Bottom Navigation */
+body {
+    padding-bottom: 60px; /* يضمن عدم تغطية المحتوى بشريط التنقل السفلي */
+}
+
+/* شريط التنقل السفلي */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+     background: var(--background);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+/* تحسين توزيع الأيقونات والنصوص */
+.nav-item {
+    text-align: center;
+    color: var(--button);
+    font-size: 16px;
+    text-decoration: none;
+    flex: 1;
+}
+
+.nav-item i {
+    font-size: 22px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.nav-item:hover {
+    color: #ffcc00;
+}
+
+/* تحسين التصميم المتجاوب */
+@media (max-width: 600px) {
+    .nav-item {
+        font-size: 14px;
+    }
+
+    .nav-item i {
+        font-size: 18px;
+    }
+}
+/* تصميم الفوتر - ثابت في جميع الصفحات */
+.footer {
+    background-color: #0b0668;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    font-size: 16px;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* تصميم متجاوب للفوتر */
+@media (max-width: 600px) {
+    .footer {
+        font-size: 14px;
+        padding: 15px 0;
+    }
+}
+#support-button {
+    position: fixed;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    background-color:var(--background); /* لون أزرق */
+    color: white;
+    padding: 10px 14px;
+    border-radius: 25px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    font-size: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s, transform 0.2s;
+    z-index: 1000;
+}
+
+#support-button:hover {
+    background-color: #0056b3; /* لون أزرق غامق عند التحويم */
+    transform: translateY(-50%) scale(1.05);
+}
+
+#support-button i {
+    font-size: 20px;
+    margin-right: 6px;
+}
+#back-button {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background-color:var(--paragraph); /* لون أزرق */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s, transform 0.2s;
+    z-index: 1000;
+}
+
+#back-button:hover {
+    background-color: #0056b3; /* لون أزرق غامق عند التحويم */
+    transform: scale(1.05);
+}
+
+#back-button i {
+    font-size: 18px;
+    margin-right: 6px;
+}
+.locked-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    padding: 30px;
+    text-align: center;
+    background-color: #0f0e17;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 90%;
+    box-shadow: 3px 6px 10px  5px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.locked-box {
+    background: linear-gradient(135deg, #1e1e2f, #3a3a4f);
+    padding: 20px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.locked-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+}
+
+.locked-box i {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #f39c12;
+}
+
+.locked-box p {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+}

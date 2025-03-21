@@ -1,0 +1,92 @@
+body {
+
+    background: #0f0e17;
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+h2 {
+    color:white;
+    margin-bottom: 20px;
+    background: #0f0e17;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.table {
+    background: #0f0e17;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table th, .table td {
+    vertical-align: middle;
+}
+
+.status-completed {
+    color: green;
+    font-weight: bold;
+}
+
+.status-pending {
+    color: orange;
+    font-weight: bold;
+}
+
+.status-failed {
+    color: red;
+    font-weight: bold;
+}
+/* تنسيق خاص للحالة المكتملة */
+.status-approved {
+    color: green;
+}
+
+/* تنسيق خاص للحالة التي قيد الانتظار */
+.status-pending {
+    color: orange;
+}
+
+/* تنسيق لحالة افتراضية أخرى */
+.status-default {
+    color: gray;
+}
+/* تخصيص الأيقونات */
+.status-approved {
+    font-size: 1.5em;
+    color: green;
+  }
+  
+  .status-rejected {
+    font-size: 1.5em;
+    color: red;
+  }
+  
+  .status-pending {
+    font-size: 1.5em;
+    color: orange;
+  }
+  
+  /* تكبير حجم الخط للمبلغ */
+table td:nth-child(1) {
+    font-size: 1.2em;  /* زيادة حجم الخط للمبلغ */
+  }
+  
+  /* تكبير حجم الخط للتاريخ */
+  table td:nth-child(2) {
+    font-size: 1.2em;  /* زيادة حجم الخط للتاريخ */
+  }
+  
+  /* تكبير حجم الخط لنوع المعاملة (إيداع / سحب) */
+  table td:nth-child(3) {
+    font-size: 1.2em;  /* زيادة حجم الخط لأنواع المعاملات */
+    font-weight: bold; /* جعل النص عريضًا */
+  }
+  
+  /* تكبير حجم الخط للحالة */
+  table td:nth-child(4) {
+    font-size: 1.2em;  /* زيادة حجم الخط للحالة */
+    font-weight: bold; /* جعل النص عريضًا */
+  }
+  

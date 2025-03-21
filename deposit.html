@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, maximum-scale=1">
+  <title data-i18n="deposit_page_title">الإيداع</title>
+  
+  <!-- Bootstrap لتحسين التصميم -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  
+  <!-- ملف التنسيق الخاص بصفحة الإيداع (يتضمن التعديلات) -->
+  <link rel="stylesheet" href="css/deposit.css">
+  
+  <!-- خطوط عربية -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container">
+    <div class="deposit-box">
+      <h2 class="text-center mb-4" data-i18n="deposit_title">الإيداع</h2>
+      
+      <!-- نموذج الإيداع -->
+      <form id="depositForm" enctype="multipart/form-data">
+        
+        <!-- اختيار طريقة الدفع -->
+        <div class="mb-3">
+          <label for="paymentMethod" class="form-label field-label" data-i18n="payment_method">طريقة الدفع</label>
+          <select id="paymentMethod" class="form-select" required>
+            <option value="" data-i18n="select_payment_method">اختر طريقة الدفع</option>
+          </select>
+        </div>
+
+        <!-- حقول USDT (مخفية افتراضيًا) -->
+        <div id="usdtFields" class="mb-3 d-none">
+          <label for="networkName" class="form-label field-label" data-i18n="network_name">اسم الشبكة</label>
+          <input type="text" id="networkName" class="form-control" placeholder="مثال: TRC20 أو ERC20">
+          <label for="networkAddress" class="form-label field-label" data-i18n="network_address">عنوان الشبكة</label>
+          <input type="text" id="networkAddress" class="form-control" placeholder="أدخل عنوان الشبكة">
+          <div class="qr-container mt-3 text-center">
+            <img id="qrCode" src="imgs/aaa.webp" alt="QR Code" class="wallet-image">
+          </div>
+        </div>
+
+        <!-- تفاصيل المحفظة في حالة الطرق المحلية (مخفية افتراضيًا) -->
+        <div id="walletDetails" class="mb-3 d-none">
+          <label class="form-label field-label" data-i18n="receiver_wallet">رقم المحفظة المستلم</label>
+          <input type="text" id="receiverNumber" class="form-control" readonly>
+          <img id="walletImage" src="" alt="صورة المحفظة" class="wallet-image">
+        </div>
+
+        <!-- المبلغ -->
+        <div class="mb-3">
+          <input type="number" id="amount" class="form-control" placeholder="أدخل المبلغ" required data-i18n="enter_amount">
+        </div>
+
+        <!-- أرقام الهواتف -->
+        <div id="phoneFields" class="mb-3">
+          <input type="text" id="senderNumber" class="form-control mb-2" placeholder="أدخل رقم هاتف المرسل منه" required data-i18n="sender_phone">
+          <input type="text" id="receiverPhone" class="form-control" placeholder="أدخل رقم الهاتف المرسل إليه" required data-i18n="receiver_phone">
+        </div>
+
+        <!-- رفع صورة إثبات التحويل -->
+        <div class="mb-3">
+          <label class="form-label upload-proof-label" data-i18n="upload_proof">إرفاق صورة إثبات التحويل</label>
+          
+          <!-- الحقل الأصلي مخفي -->
+          <input type="file" id="proofImage" class="form-control d-none" accept="image/*" required>
+          
+          <!-- زر مخصص لفتح نافذة اختيار الملف -->
+          <label for="proofImage" class="btn btn-secondary" style="margin-top:8px;" data-i18n="choose_file_label">اختر ملف</label>
+        </div>
+
+        <!-- زر الإيداع -->
+        <button type="button" id="submitButton" class="btn-deposit w-100" data-i18n="deposit_button">إيداع</button>
+      </form>
+
+      <!-- عرض الرسائل -->
+      <div id="message" class="mt-3 text-center"></div>
+
+      <!-- سجل الإيداع المصغّر -->
+      <div id="depositHistory" class="mt-4"></div>
+    </div>
+  </div>
+
+  <!-- تضمين مكتبة Polyglot.js قبل translation.js -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/polyglot.js/2.2.2/polyglot.min.js"></script>
+  <script defer src="js/translation.js"></script>
+
+  <!-- Socket.IO -->
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  
+  <!-- ملف جافا سكربت الخاص بالإيداع -->
+  <script src="js/deposit.js"></script>
+  
+  <!-- سكربت الفوتر (إن وجد) -->
+  <script src="js/footer.js"></script>
+</body>
+</html>

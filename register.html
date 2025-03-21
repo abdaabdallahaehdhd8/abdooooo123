@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>إنشاء حساب</title>
+
+  <!-- ربط ملف التنسيق الخارجي -->
+  <link rel="stylesheet" href="css/register.css" />
+
+  <!-- تضمين Font Awesome (الإصدار 6) عبر CDN لأيقونة اللغة -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-XTmzY4+K7PHgCTv8B9X0Xec/OQ3SL/qd3ZzMPLv7ABFa3EIX5Rmf/5R2xZMAfFZxv1hN1tpgvD63+I06Zqj5/g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+
+  <!-- زر تغيير اللغة في أعلى الصفحة مع أيقونة الكرة الأرضية -->
+  <button id="lang-switch" class="lang-button">
+    <!-- أيقونة الكرة الأرضية -->
+    <i class="fa-solid fa-globe lang-icon"></i>
+    <span class="lang-text">العربية</span>
+  </button>
+
+  <div class="register-container">
+    <div class="register-box">
+      <h2 data-translate="header_title">إنشاء حساب جديد</h2>
+      <form id="registerForm">
+        <input 
+          type="text" 
+          id="name" 
+          placeholder="الاسم بالكامل" 
+          data-translate-placeholder="placeholder_fullname"
+          required 
+        />
+        <input 
+          type="email" 
+          id="email" 
+          placeholder="البريد الإلكتروني" 
+          data-translate-placeholder="placeholder_email"
+          required 
+        />
+
+        <!-- مجموعة الهاتف: حقل رقم الهاتف + قائمة مفتاح الدولة + صورة العلم -->
+        <div class="phone-group">
+          <input 
+            type="text" 
+            id="phone" 
+            placeholder="رقم الهاتف" 
+            data-translate-placeholder="placeholder_phone"
+            required
+            style="direction: ltr; unicode-bidi: bidi-override; text-align: left;"
+          />
+          <select id="countryCode" required></select>
+          <img 
+            id="countryFlag" 
+            src="" 
+            alt="علم الدولة" 
+            style="width:24px; height:auto; margin-left:8px; display:none;"
+          />
+        </div>
+
+        <input 
+          type="text" 
+          id="referralCode" 
+          placeholder="كود الإحالة (اختياري)" 
+          data-translate-placeholder="placeholder_referral"
+        />
+
+        <input 
+          type="password" 
+          id="password" 
+          placeholder="كلمة المرور" 
+          data-translate-placeholder="placeholder_password"
+          required 
+        />
+        <input 
+          type="password" 
+          id="confirmPassword" 
+          placeholder="تأكيد كلمة المرور" 
+          data-translate-placeholder="placeholder_confirmPassword"
+          required 
+        />
+
+        <button 
+          type="submit" 
+          class="btn-gradient"
+          data-translate="button_signup"
+        >
+          إنشاء حساب
+        </button>
+      </form>
+      <p class="lgin">
+        <span data-translate="login_prompt">لديك حساب بالفعل؟</span>
+        <a href="login.html" data-translate="link_login">تسجيل الدخول</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- تضمين Polyglot.js لترجمة الصفحة -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/polyglot.js/2.2.2/polyglot.min.js"></script>
+  <!-- ملف ترجمة الصفحة -->
+  <script defer src="js/translatio.js"></script>
+  <!-- ملف جافاسكريبت الخاص بصفحة التسجيل -->
+  <script src="js/register.js"></script>
+</body>
+</html>

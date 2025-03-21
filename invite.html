@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="page_title">دعوة صديق</title>
+
+  <!-- رابط Font Awesome (CDN) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <!-- مكتبة Bootstrap CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  />
+
+  <!-- ملف CSS الخاص بالصفحة (تأكد من صحة المسار) -->
+  <link rel="stylesheet" href="./css/invite.css" />
+</head>
+<body>
+  <!-- هيدر الصفحة -->
+  <header>
+    <div class="container">
+      <h1 data-i18n="header_title">دعوة صديق</h1>
+    </div>
+  </header>
+
+  <!-- قسم الدعوة -->
+  <section class="invite-section">
+    <h2 data-i18n="invite_section_title">اربح من دعوة أصدقائك!</h2>
+    <p data-i18n="invite_section_paragraph">
+      شارك رابط الإحالة الخاص بك مع أصدقائك، وعند تسجيلهم في الموقع،
+      ستحصل على عمولة من إيداعاتهم:
+    </p>
+    <ul class="commission-list">
+      <li data-i18n="commission_level_one">
+        <strong>المستوى الأول:</strong> 10% من الإيداع
+      </li>
+      <li data-i18n="commission_level_two">
+        <strong>المستوى الثاني:</strong> 4% من الإيداع
+      </li>
+      <li data-i18n="commission_level_three">
+        <strong>المستوى الثالث:</strong> 1% من الإيداع
+      </li>
+    </ul>
+
+    <div class="referral-box">
+      <input type="text" id="referral-link" readonly />
+      <button id="copy-link" data-i18n="copy_referral_button">📋 نسخ الرابط</button>
+    </div>
+  </section>
+
+  <!-- قسم مسابقة الإحالات -->
+  <header>
+    <div class="container">
+      <h1 data-i18n="competition_header">مسابقة الإحالات</h1>
+    </div>
+  </header>
+
+  <!-- قسم تايمر التنازلي -->
+  <section class="invite-section">
+    <h2 data-i18n="countdown_section_title">تايمر تنازلي - 3 شهور</h2>
+    <div class="countdown-container">
+      <div class="countdown">
+        <div class="time-part" id="days">00</div>
+        <div class="time-part" id="hours">00</div>
+        <div class="time-part" id="minutes">00</div>
+        <div class="time-part" id="seconds">00</div>
+      </div>
+      <div class="labels">
+        <div data-i18n="countdown_label_days">أيام</div>
+        <div data-i18n="countdown_label_hours">ساعات</div>
+        <div data-i18n="countdown_label_minutes">دقائق</div>
+        <div data-i18n="countdown_label_seconds">ثواني</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم ترتيب المسابقة -->
+  <header>
+    <div class="container">
+      <h1 data-i18n="ranking_section_header">ترتيب المسابقة</h1>
+    </div>
+  </header>
+  <section class="invite-section">
+    <h2 data-i18n="ranking_section_title">أفضل 10 أعضاء</h2>
+    <div class="ranking-list">
+      <!-- سيتم تعبئة بيانات الترتيب هنا بواسطة JavaScript -->
+    </div>
+    <p data-i18n="ranking_section_paragraph">
+      إذا لم تكن مدرجًا ضمن الترتيب أو دخلت تحت أحد المستويات، سيتم عرض ترتيبك الحالي بناءً على الإحالات المؤهلة.
+    </p>
+  </section>
+
+  <!-- قسم جوائز المسابقة -->
+  <header>
+    <div class="container">
+      <h1 data-i18n="prizes_section_header">جوائز المسابقة</h1>
+    </div>
+  </header>
+  <section class="invite-section">
+    <h2 data-i18n="winners_section_title">جوائز الأوائل</h2>
+    <div class="prizes-list">
+      <div class="prize-item">
+        <span class="prize-rank">1</span>
+        <span class="prize-amount">30,000 USDT</span>
+      </div>
+      <div class="prize-item">
+        <span class="prize-rank">2</span>
+        <span class="prize-amount">20,000 USDT</span>
+      </div>
+      <div class="prize-item">
+        <span class="prize-rank">3</span>
+        <span class="prize-amount">10,000 USDT</span>
+      </div>
+      <div class="prize-item">
+        <span class="prize-rank">4</span>
+        <span class="prize-amount">7,500 USDT</span>
+      </div>
+      <div class="prize-item">
+        <span class="prize-rank">5</span>
+        <span class="prize-amount">5,000 USDT</span>
+      </div>
+      <div class="prize-item">
+        <span class="prize-rank">6</span>
+        <span class="prize-amount">4,000 USDT</span>
+      </div>
+      <div class="prize-item">
+        <span class="prize-rank">7</span>
+        <span class="prize-amount">3,000 USDT</span>
+      </div>
+      <div class="prize-item">
+        <span class="prize-rank">8</span>
+        <span class="prize-amount">2,000 USDT</span>
+      </div>
+      <div class="prize-item">
+        <span class="prize-rank">9</span>
+        <span class="prize-amount">1,000 USDT</span>
+      </div>
+      <div class="prize-item">
+        <span class="prize-rank">10</span>
+        <span class="prize-amount">500 USDT</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم شرح الحدث -->
+  <section class="event-info">
+    <h2 data-i18n="event_description_title">شرح الحدث</h2>
+    <p data-i18n="event_description_paragraph1">
+      يرجى الملاحظة أن نظام الإحالات والمكافآت لهذا الحدث ليس له علاقة مباشرة بنظام الإحالات والعمولات الحقيقي.
+      ففي النظام الطبيعي، تُرسل العمولات للأعضاء الذين قاموا بدعوة الآخرين على أساس مبلغ الإيداع الذي يقوم به الشخص المدعو،
+      بدءًا من 10 دولارات وحتى مليون دولار.
+    </p>
+    <p data-i18n="event_description_paragraph2">
+      أما في هذا الحدث والترتيب، لكي يظهر الشخص ضمن القائمة، يجب أن يكون الشخص المدعو قد قام بإيداع لا يقل عن
+      <strong>100 دولار أو 5000 جنيه مصري</strong>.
+    </p>
+    <p data-i18n="event_description_paragraph3">
+      هذا الشرط يهدف إلى التأكد من جدية المشاركة في الحدث فقط.
+    </p>
+  </section>
+
+  <div id="footer"></div>
+
+  <!-- Bootstrap JS (إذا كنت بحاجة إليه) -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  ></script>
+  <!-- تضمين مكتبة Polyglot.js قبل translation.js -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/polyglot.js/2.2.2/polyglot.min.js"></script>
+  <script defer src="js/translation.js"></script>
+  <!-- ملف جافا سكربت الخاص بالدعوة (تأكد من صحة المسار) -->
+  <script src="./js/invite.js"></script>
+  <script src="js/footer.js"></script>
+</body>
+</html>

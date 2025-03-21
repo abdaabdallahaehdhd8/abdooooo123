@@ -1,0 +1,119 @@
+body {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2c2c2c;
+
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* يسمح بتوزيع العناصر في عدة صفوف إذا كانت الشاشة صغيرة */
+    margin: 50px 0;
+    gap: 20px; /* إضافة المسافة بين الباقات */
+    padding: 0 20px; /* إضافة حشوة على الجوانب */
+}
+
+.package {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    margin: 10px 0;
+}
+
+.package:hover {
+    transform: scale(1.05);
+}
+
+.package h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.package p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.package .price {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.package .btn {
+    background-color: #FF6F00;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.package .btn:hover {
+    background-color: #ff8c1a;
+}
+
+.package-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        justify-content: center; /* مركز العناصر عند الشاشة الصغيرة */
+    }
+
+    .package {
+        width: 100%; /* كل باقة تأخذ عرض 100% من المساحة المتاحة */
+        max-width: 350px; /* الحد الأقصى للعرض 350px */
+    }
+
+    .package h3 {
+        font-size: 18px; /* تقليل حجم النص في العنوان */
+    }
+
+    .package p, .package .price {
+        font-size: 14px; /* تقليل حجم النص */
+    }
+
+    .package .btn {
+        font-size: 14px; /* تقليل حجم الزر */
+        padding: 8px 16px; /* تقليل الحشوة */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px; /* إضافة حشوة جانبية أقل للأجهزة الصغيرة */
+    }
+
+    .package {
+        width: 100%; /* كل باقة تأخذ عرض 100% */
+        max-width: 100%; /* إزالة الحد الأقصى للعرض */
+    }
+
+    .package h3 {
+        font-size: 16px; /* تقليل حجم النص أكثر */
+    }
+
+    .package .price {
+        font-size: 14px; /* تقليل حجم السعر */
+    }
+
+    .package .btn {
+        font-size: 12px; /* تقليل حجم الزر */
+        padding: 6px 12px; /* تقليل الحشوة */
+    }
+}

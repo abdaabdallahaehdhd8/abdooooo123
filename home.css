@@ -1,0 +1,187 @@
+/* تعيين خطوط أساسية وتحسين المظهر */
+body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: #f8f9fa;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* تصميم شريط التنقل */
+.navbar {
+    background-color: #0b0668;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* زر اللوجو في المنتصف */
+.navbar .container button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* تكبير الأيقونات */
+.navbar .container i {
+    font-size: 24px;
+}
+
+/* محتوى الصفحة */
+.content {
+    padding: 20px;
+    max-width: 90%;
+    margin: auto;
+}
+
+/* تصميم نافذة الإشعارات */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 50vw;
+    height: 50vh;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* زر إغلاق الإشعار */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: red;
+    font-weight: bold;
+}
+
+/* تحسين النصوص داخل الإشعار */
+.modal-content h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.modal-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 80%;
+}
+
+/* جعل التصميم متجاوبًا مع الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .navbar .container {
+        flex-direction: column;
+    }
+
+    .navbar .container button {
+        font-size: 18px;
+        margin: 5px 0;
+    }
+
+    .modal-content {
+        width: 80vw;
+        height: 60vh;
+    }
+}
+
+/* تحسين السلايدر */
+#hero-carousel {
+    margin-top: 10px;
+}
+
+.carousel-item img {
+    height: 60vh; /* جعل ارتفاع الصور مناسبًا */
+    object-fit: cover; /* ضمان تناسب الصورة داخل السلايدر */
+    border-radius: 10px; /* إضافة حواف ناعمة */
+    width: 100%;
+}
+
+/* تحسين النصوص داخل السلايدر */
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 10px;
+    bottom: 20px;
+    width: 80%;
+    margin: auto;
+}
+
+.carousel-caption h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.carousel-caption p {
+    font-size: 18px;
+    color: #ddd;
+}
+
+/* تحسين أزرار السلايدر */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.notification-bar {
+    background-color: #190368; /* لون الشريط */
+    color: #fff;
+    font-size: 18px;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+}
+
+.notification-content i {
+    margin-left: 10px;
+    font-size: 20px;
+}
