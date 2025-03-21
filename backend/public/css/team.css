@@ -1,0 +1,159 @@
+/* استيراد الخطوط */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+
+/* تعميم التنسيقات */
+body, html {
+    font-family: 'Tajawal', sans-serif;
+    background: #0f0e17;
+    color: #fffffe;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* ✅ تحسين توزيع الهيدر */
+header {
+    background: #fffffe;
+    color: #0f0e17;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+/* زر الرجوع */
+.btn-back {
+    background: #ff8906;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.btn-back:hover {
+    background: #e67e04;
+}
+
+/* ✅ تحسين تنسيق قسم إحصائيات الفريق */
+.team-stats-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.team-stats-section h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+/* ✅ تحسين تنسيق البطاقات */
+.stat-box {
+    background: #1a1a2e;
+    color: #fffffe;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px;
+    display: inline-block;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.stat-box h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.stat-box p {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff8906;
+}
+
+/* ✅ جعل البطاقات متجاوبة */
+@media (max-width: 768px) {
+    .stat-box {
+        width: 90%;
+        margin: 10px auto;
+    }
+}
+
+/* ✅ تنسيق قسم أعضاء الفريق */
+.team-members-section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* ✅ تحسين الجدول */
+.table-container {
+    overflow-x: auto; /* يسمح بتمرير الجدول أفقيًا */
+}
+
+.team-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #1a1a2e;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* ✅ تنسيق رأس الجدول */
+.team-table thead {
+    background: #ff8906;
+    color: #fffffe;
+}
+
+.team-table th, .team-table td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ✅ تلوين المستويات */
+.level-1 td { background: rgba(255, 255, 255, 0.05); }
+.level-2 td { background: rgba(255, 255, 255, 0.08); }
+.level-3 td { background: rgba(255, 255, 255, 0.12); }
+
+/* ✅ تحسين المظهر عند التحويم */
+.team-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* ✅ جعل الجدول متجاوبًا */
+@media (max-width: 768px) {
+    .team-table th, .team-table td {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-table th, .team-table td {
+        padding: 6px;
+        font-size: 12px;
+    }
+}

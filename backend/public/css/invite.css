@@ -1,0 +1,452 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+
+body {
+    font-family: 'Tajawal', sans-serif;
+    background: #0f0e17;
+    color: #fffffe;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #fffffe;
+    color: #0f0e17;
+    padding: 15px 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.btn-back {
+    background: #ff8906;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.invite-section {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.commission-list {
+    list-style: none;
+    padding: 0;
+}
+
+.commission-list li {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+/* صندوق رابط الإحالة */
+.referral-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+#referral-link {
+    width: 80%;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background: #fffffe;
+    text-align: center;
+    color: #0f0e17;
+}
+
+#copy-link {
+    background: #ff8906;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* تايمر التنازلي */
+.countdown-container {
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.countdown {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.time-part {
+    background: #e2e2e2;
+    color: #0f0e17;
+    padding: 0.5rem 0.8rem;
+    border-radius: 5px;
+    min-width: 50px;
+}
+
+.labels {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #fffffe;
+}
+
+/* تصميم متجاوب */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .invite-section {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .referral-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #referral-link {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    #copy-link {
+        width: 100%;
+        font-size: 16px;
+    }
+    
+    .countdown {
+        font-size: 1.5rem;
+    }
+    
+    .time-part {
+        min-width: 40px;
+        padding: 0.3rem 0.5rem;
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+
+body {
+    font-family: 'Tajawal', sans-serif;
+    background: #0f0e17;
+    color: #fffffe;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #fffffe;
+    color: #0f0e17;
+    padding: 15px 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.btn-back {
+    background: #ff8906;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.invite-section {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.commission-list {
+    list-style: none;
+    padding: 0;
+}
+
+.commission-list li {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+/* صندوق رابط الإحالة */
+.referral-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+#referral-link {
+    width: 80%;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background: #fffffe;
+    text-align: center;
+    color: #0f0e17;
+}
+
+#copy-link {
+    background: #ff8906;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* قسم ترتيب المسابقة */
+.ranking-list {
+    margin: 20px auto;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 600px;
+  }
+  
+  .ranking-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .ranking-item:last-child {
+    border-bottom: none;
+  }
+  
+  .ranking-item .rank {
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 30px;
+  }
+  
+  .ranking-item .name {
+    font-size: 1.2rem;
+    flex: 1;
+    text-align: right;
+  }
+  
+  .ranking-item .referrals {
+    font-size: 1.1rem;
+    background: #ff8906;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  /* قسم الجوائز */
+  .prizes-list {
+    margin: 20px auto;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 600px;
+  }
+  
+  .prize-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .prize-item:last-child {
+    border-bottom: none;
+  }
+  
+  .prize-item .prize-rank {
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 30px;
+  }
+  
+  .prize-item .prize-amount {
+    font-size: 1.2rem;
+    background: #ff8906;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  /* تصميم متجاوب */
+  @media (max-width: 768px) {
+      .container {
+          flex-direction: column;
+          text-align: center;
+      }
+  
+      h1 {
+          font-size: 20px;
+      }
+  
+      .invite-section {
+          width: 90%;
+          padding: 15px;
+      }
+  
+      .referral-box {
+          flex-direction: column;
+          align-items: center;
+      }
+  
+      #referral-link {
+          width: 100%;
+          font-size: 16px;
+      }
+  
+      #copy-link {
+          width: 100%;
+          font-size: 16px;
+      }
+      
+      .ranking-item .rank,
+      .prize-item .prize-rank {
+          width: 25px;
+          font-size: 1.3rem;
+      }
+      
+      .ranking-item .name,
+      .ranking-item .referrals,
+      .prize-item .prize-amount {
+          font-size: 1rem;
+      }
+  }
+  
+  /* تعديل تنسيق رقم الترتيب ليظهر داخل دائرة */
+  .ranking-item .rank {
+      font-size: 1.5rem;
+      font-weight: bold;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      background: #ff8906;
+      color: #fffffe;
+      border-radius: 50%;
+      text-align: center;
+      margin-right: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* تعديل تنسيق رقم المركز في قسم الجوائز ليظهر داخل دائرة بنفس النمط */
+  .prize-item .prize-rank {
+      font-size: 1.5rem;
+      font-weight: bold;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      background: #ff8906;
+      color: #fffffe;
+      border-radius: 50%;
+      text-align: center;
+      margin-right: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .event-info {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      text-align: right; /* محاذاة النص لليمين ليتناسب مع اللغة العربية */
+  }
+  
+  .event-info h2 {
+      font-size: 26px;
+      margin-bottom: 10px;
+  }
+  
+  .event-info p {
+      font-size: 18px;
+      margin-bottom: 15px;
+      line-height: 1.5;
+  }
+  
+  .event-info strong {
+      color: #ff8906; /* إبراز الشرط بلون مميز */
+  }
+  
+  /* تأثير الهوفر للعناصر غير المميزة */
+  .ranking-item:not(.current-user):hover {
+      background-color: #f0f0f0;
+      transform: scale(1.05);
+      cursor: pointer;
+  }
+  

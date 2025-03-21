@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="page_title">عملاؤنا</title>
+  <!-- روابط الأيقونات و Bootstrap -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <!-- ملف CSS الخاص بك -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <!-- زر تغيير اللغة -->
+      <button class="btn" id="language-btn" onclick="toggleLanguage()">
+        <i class="fa-solid fa-globe"></i>
+        <span id="language-text" data-i18n="language_name">العربية</span>
+      </button>
+      
+      <!-- زر الإشعارات -->
+      <button class="btn" id="notifications-btn">
+        <i class="fa-solid fa-bell"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- محتوى الصفحة -->
+  <div class="content">
+    
+  </div>
+
+  <!-- قائمة الإشعارات -->
+  <div id="notifications-box" class="notifications hidden">
+    
+  </div>
+
+  <!-- نافذة الإشعارات (Modal) -->
+  <div id="notification-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close-btn" id="close-notification">&times;</span>
+      <h2 data-i18n="new_notification">إشعار جديد</h2>
+      <!-- عنصر يحتوي على الإعلانات القادمة من السيرفر -->
+      <div id="ads-container"></div>
+    </div>
+  </div>
+  
+  <!-- السلايدر -->
+  <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="project-root/imgs/الاحاله.webp" class="d-block w-100" alt="Slide 1">
+        <div class="carousel-caption"></div>
+      </div>
+      <div class="carousel-item">
+        <img src="project-root/imgs/64c759e6b58005a7af934ab8b6923595_thumb.jpg" class="d-block w-100" alt="Slide 2">
+        <div class="carousel-caption"></div>
+      </div>
+      <div class="carousel-item">
+        <img src="project-root/imgs/47e9e37f3e6ab307f9bb238942be9f1a_thumb.jpg" class="d-block w-100" alt="Slide 3">
+        <div class="carousel-caption"></div>
+      </div>
+      <div class="carousel-item">
+        <img src="project-root/imgs/64c759e6b58005a7af934ab8b6923595_thumb.jpg" class="d-block w-100" alt="Slide 2">
+        <div class="carousel-caption"></div>
+      </div>
+    </div>
+    <!-- أزرار التنقل -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+  
+  <section>
+    <br><br><br><br>
+    <!-- شريط الإشعارات المتحرك -->
+    <div class="notification-bar">
+      <div class="notification-content">
+        <i class="fa-solid fa-volume-up"></i>
+        <span id="scrolling-notification-text" data-i18n="loading_notifications">جاري تحميل الإشعارات...</span>
+      </div>
+    </div>
+  </section>
+  
+  <!-- قسم الخدمات -->
+  <section class="services">
+    <div class="service-item">
+      <a href="withdraw.html">
+        <i class="fas fa-money-bill-wave"></i>
+        <p data-i18n="withdraw">السحب</p>
+      </a>
+    </div>
+    <div class="service-item">
+      <a href="deposit.html">
+        <i class="fas fa-wallet"></i>
+        <p data-i18n="deposit">الإيداع</p>
+      </a>
+    </div>
+    <div class="service-item">
+      <a href="activate-bot.html">
+        <i class="fas fa-robot"></i>
+        <p data-i18n="activate_bot">تفعيل البوت</p>
+      </a>
+    </div>
+    <div class="service-item">
+      <a href="wheel.html">
+        <i class="fas fa-dice"></i>
+        <p data-i18n="wheel">عجلة الحظ</p>
+      </a>
+    </div>
+    <div class="service-item">
+      <a href="invite.html">
+        <i class="fas fa-gift"></i>
+        <p data-i18n="referral_rewards">مكافآت الإحالات</p>
+      </a>
+    </div>
+    <div class="service-item">
+      <a href="about.html">
+        <i class="fas fa-info-circle"></i>
+        <p data-i18n="about_us">من نحن</p>
+      </a>
+    </div>
+    <div class="service-item">
+      <a href="video.html">
+        <i class="fas fa-video"></i>
+        <p data-i18n="tutorial_video">فيديو تعليمي</p>
+      </a>
+    </div>
+    <div class="service-item">
+      <a href="InvestmentPlans.html">
+        <i class="fas fa-crown"></i>
+        <p data-i18n="vip">VIP</p>
+      </a>
+    </div>
+  </section>
+  
+  <section class="locked-section">
+    <div class="locked-box" onclick="showMessage()">
+      <i class="fas fa-lock"></i>
+      <p data-i18n="not_available">ميزة غير متاحة حاليًا</p>
+    </div>
+    <div class="locked-box" onclick="showMessage()">
+      <i class="fas fa-lock"></i>
+      <p data-i18n="not_available">ميزة غير متاحة حاليًا</p>
+    </div>
+    <div class="locked-box" onclick="showMessage()">
+      <i class="fas fa-lock"></i>
+      <p data-i18n="not_available">ميزة غير متاحة حاليًا</p>
+    </div>
+    <div class="locked-box" onclick="showMessage()">
+      <i class="fas fa-lock"></i>
+      <p data-i18n="not_available">ميزة غير متاحة حاليًا</p>
+    </div>
+    <div class="locked-box" onclick="showMessage()">
+      <i class="fas fa-lock"></i>
+      <p data-i18n="not_available">ميزة غير متاحة حاليًا</p>
+    </div>
+    <div class="locked-box" onclick="showMessage()">
+      <i class="fas fa-lock"></i>
+      <p data-i18n="not_available">ميزة غير متاحة حاليًا</p>
+    </div>
+    <div class="locked-box" onclick="showMessage()">
+      <i class="fas fa-lock"></i>
+      <p data-i18n="not_available">ميزة غير متاحة حاليًا</p>
+    </div>
+    <div class="locked-box" onclick="showMessage()">
+      <i class="fas fa-lock"></i>
+      <p data-i18n="not_available">ميزة غير متاحة حاليًا</p>
+    </div>
+  </section>
+  
+  <section class="profits-section">
+    <div class="container">
+      <h2 class="title" data-i18n="monthly_profits">قائمة الأرباح لهذا الشهر</h2>
+      <ul class="profit-list">
+        <li class="profit-item">
+          <div class="user-info">
+            <img src="" alt="User">
+            <div>
+              <p data-i18n="congrat_5767">تهانينا 5767****</p>
+<p data-i18n="this_month_earnings">الأرباح هذا الشهر</p>
+
+            </div>
+          </div>
+          <p class="profit-amount">21000 EGP</p>
+        </li>
+        <li class="profit-item">
+          <div class="user-info">
+            <img src="" alt="User">
+            <div>
+              <p data-i18n="congrat_5461">تهانينا 5461****</p>
+              <p data-i18n="this_month_earnings">الأرباح هذا الشهر</p>
+              
+            </div>
+          </div>
+          <p class="profit-amount">58400 EGP</p>
+        </li>
+        <li class="profit-item">
+          <div class="user-info">
+            <img src="" alt="User">
+            <div>
+              <p data-i18n="congrat_6743">تهانينا 6743****</p>
+              <p data-i18n="this_month_earnings">الأرباح هذا الشهر</p>
+              
+            </div>
+          </div>
+          <p class="profit-amount">26250 EGP</p>
+        </li>
+        <li class="profit-item">
+          <div class="user-info">
+            <img src="" alt="User">
+            <div>
+              <p data-i18n="congrat_9882">تهانينا 9882****</p>
+              <p data-i18n="this_month_earnings">الأرباح هذا الشهر</p>
+              
+            </div>
+          </div>
+          <p class="profit-amount">17800 EGP</p>
+        </li>
+        <li class="profit-item">
+          <div class="user-info">
+            <img src="" alt="User">
+            <div>
+              <p data-i18n="congrat_7197">تهانينا 7197****</p>
+              <p data-i18n="this_month_earnings">الأرباح هذا الشهر</p>
+              
+            </div>
+          </div>
+          <p class="profit-amount">34000 EGP</p>
+        </li>
+        <li class="profit-item">
+          <div class="user-info">
+            <img src="" alt="User">
+            <div>
+              <p data-i18n="congrat_8655">تهانينا 8655****</p>
+<p data-i18n="this_month_earnings">الأرباح هذا الشهر</p>
+
+            </div>
+          </div>
+          <p class="profit-amount">41500 EGP</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+  
+  <a href="#" id="support-button" target="_blank">
+    <i class="fas fa-headset"></i> الدعم الفني
+  </a>
+  
+  <footer class="bottom-nav">
+    <a href="profile.html" class="nav-item">
+      <i class="fas fa-user"></i>
+      <span>أنا</span>
+    </a>
+    <a href="vip.html" class="nav-item">
+      <i class="fas fa-chart-line"></i>
+      <span> ربح</span>
+    </a>
+    <a href="index.html" class="nav-item">
+      <i class="fas fa-home"></i>
+      <span>مسكن</span>
+    </a>
+  </footer>
+  
+  <!-- مكتبات خارجية -->
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- ملفات جافاسكريبت الخاصة بالمشروع -->
+  <script src="js/script.js"></script>
+  <script src="js/footer.js"></script>
+  <!-- تضمين مكتبة Polyglot.js -->
+ <!-- تضمين مكتبة Polyglot.js قبل translation.js -->
+<!-- تضمين مكتبة Polyglot.js قبل translation.js -->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/polyglot.js/2.2.2/polyglot.min.js"></script>
+<script defer src="js/translation.js"></script>
+
+
+  
+</body>
+</html>

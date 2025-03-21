@@ -1,0 +1,178 @@
+:root {
+  --background: #0f0e17 !important;
+  --headline: #fffffe !important;
+  --paragraph: #a7a9be !important;
+  --button: #ff8906 !important;
+  --button-text: #fffffe !important;
+  --illustration-stroke: black !important;
+  --main: #fffffe !important;
+  --highlight: #ff8906 !important;
+  --secondary: #f25f4c !important;
+  --tertiary: #e53170 !important;
+  font-family: 'Cairo', 'Tajawal', sans-serif !important;
+}
+
+/* جعل الصفحة 100% مع محاذاة المحتوى في المنتصف */
+html, body {
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background: var(--background) !important;
+  font-family: 'Tajawal', sans-serif !important;
+  direction: rtl !important;
+  width: 100% !important;
+  overflow: hidden !important;
+}
+
+/* ضبط الحاوية بحيث تبقى وسط الصفحة */
+.container {
+  width: 100% !important;
+  max-width: 400px !important;
+  padding: 15px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  height: 100vh !important;
+}
+
+/* تصميم صندوق الإيداع */
+.deposit-box {
+  width: 100% !important;
+  max-width: 400px !important;
+  background: var(--main) !important;
+  padding: 20px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2) !important;
+  text-align: center !important;
+  transition: all 0.3s ease !important;
+}
+
+/* عناوين الحقول (طريقة الدفع، رقم المحفظة المستلم) */
+.form-label.field-label {
+  color: #000 !important;        
+  padding: 6px 10px !important;
+  border-radius: 4px !important;
+  display: inline-block !important;
+  margin-bottom: 8px !important;
+  font-weight: bold !important;
+  font-size: 16px !important;  
+  margin-top: 10px !important; 
+}
+
+/* عبارة "إرفاق صورة إثبات التحويل" */
+.upload-proof-label {
+  color: #000 !important;        
+  padding: 6px 10px !important;
+  border-radius: 4px !important;
+  display: block !important;     /* اجعلها تأخذ سطرًا كاملًا */
+  margin-bottom: 8px !important;
+  font-weight: bold !important;
+  font-size: 16px !important;  
+  margin-top: 10px !important; 
+}
+
+/* تحسين الإدخالات (تكبير الخط) */
+input, select {
+  width: 100% !important;
+  padding: 12px !important;
+  margin-top: 8px !important;
+  border: 1px solid var(--paragraph) !important;
+  border-radius: 6px !important;
+  font-size: 20px !important;  
+  text-align: center !important;
+}
+
+/* صورة إثبات التحويل */
+.wallet-image {
+  display: block !important;
+  width: 80px !important;
+  height: 80px !important;
+  object-fit: cover !important;
+  border-radius: 5px !important;
+  margin: 10px auto !important;
+}
+
+/* زر الإيداع */
+.btn-deposit {
+  background: var(--highlight) !important;
+  color: var(--button-text) !important;
+  padding: 12px 20px !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-size: 18px !important;  
+  font-weight: bold !important;
+  cursor: pointer !important;
+  transition: background 0.3s, transform 0.2s !important;
+  margin-top: 15px !important;
+}
+.deposit-box h2 {
+  color: #000 !important; /* جعل لون النص أسود */
+}
+
+/* عند تمرير المؤشر على زر الإيداع */
+.btn-deposit:hover {
+  background: var(--secondary) !important;
+  transform: scale(1.05) !important;
+}
+
+/* إخفاء العناصر */
+.d-none {
+  display: none !important;
+}
+.btn-choose-file {
+  display: inline-block;
+  background-color: var(--secondary); /* أو أي لون ترغب به */
+  color: #fff;                       /* لون النص */
+  font-size: 18px;                   /* تكبير حجم الخط */
+  padding: 12px 20px;                /* تكبير المساحة الداخلية */
+  border-radius: 6px;
+  border: none;                      /* إزالة إطار افتراضي */
+  cursor: pointer;                   /* شكل المؤشر عند التمرير */
+  text-align: center;               /* محاذاة النص في الوسط */
+  transition: background 0.3s, transform 0.2s; /* تأثيرات بصرية عند hover */
+}
+.btn-choose-file:hover {
+  background-color: var(--highlight); /* تأثير مختلف عند تمرير المؤشر */
+  transform: scale(1.05);
+}
+
+/* تحسين الريسبونسيف */
+@media (max-width: 480px) {
+  .deposit-box {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 10px !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+  .btn-deposit {
+    font-size: 16px !important; 
+    padding: 8px !important;
+  }
+  input, select {
+    font-size: 18px !important; 
+    padding: 8px !important;
+  }
+}
+body {
+  background-color: #0f0e17;
+  color: #fffffe;
+  font-family: 'Tajawal', sans-serif;
+}
+.card {
+  background-color: #1c1c1c;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+}
+.btn-deposit {
+  background: #ff8906;
+  border: none;
+  font-weight: bold;
+}
+.btn-deposit:hover {
+  background: #f25f4c;
+}

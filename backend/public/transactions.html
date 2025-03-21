@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- عنوان الصفحة قابل للترجمة -->
+  <title data-i18n="transactions_page_title">المعاملات المالية</title>
+
+  <!-- استدعاء Bootstrap CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  />
+  <!-- ملف التنسيقات الخاص بالمعاملات -->
+  <link rel="stylesheet" href="css/transactions.css" />
+</head>
+<body>
+  <div class="container mt-4 text-center">
+    <!-- العنوان الرئيسي قابل للترجمة -->
+    <h2 data-i18n="transactions_title">📊 سجل المعاملات المالية</h2>
+
+    <div class="table-container">
+      <table class="table table-striped table-bordered text-center">
+        <thead class="table-dark">
+          <tr>
+            <!-- لكل رأس عمود data-i18n -->
+            <th data-i18n="table_amount">💰 المبلغ</th>
+            <th data-i18n="table_date">📅 التاريخ</th>
+            <th data-i18n="table_type">🔄 نوع المعاملة</th>
+            <th data-i18n="table_status">⚡ الحالة</th>
+          </tr>
+        </thead>
+        <tbody id="transactions-body">
+          <!-- سيتم ملء المعاملات هنا عبر transactions.js -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- مكتبة Polyglot.js (إذا لم تكن مضمنة مسبقًا) -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/polyglot.js/2.2.2/polyglot.min.js"></script>
+
+  <!-- ملف الترجمة (translation.js) -->
+  <script defer src="js/translation.js"></script>
+
+  <!-- ملف footer.js في حال لديك كود للفوتر -->
+  <script src="js/footer.js"></script>
+
+  <!-- استدعاء Bootstrap JS -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  ></script>
+
+  <!-- استدعاء Socket.io من السيرفر المحلي -->
+  <script src="http://localhost:5080/socket.io/socket.io.js"></script>
+
+  <!-- ملف جافاسكربت الخاص بالمعاملات -->
+  <script src="js/transactions.js"></script>
+</body>
+</html>
